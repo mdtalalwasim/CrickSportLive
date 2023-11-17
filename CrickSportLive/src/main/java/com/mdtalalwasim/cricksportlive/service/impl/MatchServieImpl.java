@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -104,15 +103,18 @@ public class MatchServieImpl implements MatchService{
         String tableURL = "https://www.cricbuzz.com/cricket-series/6732/icc-cricket-world-cup-2023/points-table";
         try {
             Document document = Jsoup.connect(tableURL).get();
+            
             Elements table = document.select("table.cb-srs-pnts");
             Elements tableHeads = table.select("thead>tr>*");
+            
             List<String> headers = new ArrayList<>();
             tableHeads.forEach(element -> {
                 headers.add(element.text());
             });
             pointTable.add(headers);
-            Elements bodyTrs = table.select("tbody>*");
-            bodyTrs.forEach(tr -> {
+            
+            Elements bodyAllTrs = table.select("tbody>*");//select all <tr> of <tbody>
+            bodyAllTrs.forEach(tr -> {
                 List<String> points = new ArrayList<>();
                 if (tr.hasAttr("class")) {
                     Elements tds = tr.select("td");

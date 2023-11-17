@@ -1,4 +1,4 @@
-package com.mdtalalwasim.cricksportlive.controller;
+package com.mdtalalwasim.cricksportlive.controller.rest;
 
 import java.util.List;
 
@@ -15,6 +15,8 @@ import com.mdtalalwasim.cricksportlive.service.MatchService;
 @RestController
 @RequestMapping("/api")
 public class MatchRestController {
+	
+	
 	
 	@Autowired
 	private MatchService matchService;
