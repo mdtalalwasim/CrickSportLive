@@ -7,7 +7,7 @@
 
 
 # Technology Used in this Project:
-  ✅ Frontend: <b>Decided Later</b><br> 
+  ✅ Frontend: <b>Decided Later</b><br> But till now HTML, CSS, JS used in FrontEnd. <br>
   ✅ Backend : <b>Spring Boot</b><br>
   ✅ Spring Data JPA  
   ✅ REST API<br>
